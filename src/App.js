@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Request from 'superagent';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      quote: "Loading...",
+      author: "Loading..."
+    };
+  }
+
+  componentWillMount() {
+    var url = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1";
+    Request
+    .get(url)
+    .set("X-Mashape-Key", "RdmeutUcqdmshtYDGMmUmsbOcmcHp1NFC41jsnF0Ku668AbzZY")
+    .set("Accept", "application/json")
+    .then((response) => {
+      this.setState({
+        quote: response.body.quote,
+        author: response.body.author
+      });
+    });
+  }
   render() {
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>{this.state.quote}</h1>
+        <h2>- {this.state.author}</h2>
       </div>
     );
   }
