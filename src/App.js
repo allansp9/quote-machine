@@ -6,12 +6,16 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      quote: "Loading...",
-      author: "Loading..."
+      quote: "",
+      author: ""
     };
   }
 
   componentWillMount() {
+      this.getQuote();
+  }
+
+  getQuote() {
     var url = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1";
     Request
     .get(url)
@@ -24,6 +28,7 @@ class App extends Component {
       });
     });
   }
+
   render() {
 
     return (
@@ -33,6 +38,9 @@ class App extends Component {
       </div>
     );
   }
+
 }
+
+
 
 export default App;
