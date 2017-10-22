@@ -47,7 +47,7 @@ export class QuoteMachine extends React.Component {
         </div>
         <div className="">
             <div className="">
-              <button href={tweetUrl} target="_blank">Tweet!</button>
+              <a href={tweetUrl} target="_blank"><button>Tweet!</button></a>
             </div>
             <div className="">
               <button onClick={this.getQuote}>New Quote!</button>
