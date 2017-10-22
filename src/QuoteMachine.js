@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import './QuoteMachine.css';
-import { Button } from 'react-bootstrap';
+import React from 'react';
+// import './QuoteMachine.css';
 import Request from 'superagent';
 
 export class QuoteMachine extends React.Component {
@@ -11,7 +10,7 @@ export class QuoteMachine extends React.Component {
       quote: "",
       author: ""
     };
-    this.getQuote = this.getQuote.bind(this);
+     this.getQuote = this.getQuote.bind(this);
   }
 
   getQuote() {
@@ -33,19 +32,25 @@ export class QuoteMachine extends React.Component {
   }
 
   render () {
-    let tweetUrl=`https://twitter.com/intent/tweet?text=${this.state.quote} - ${this.state.author}`;
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${this.state.quote} - ${this.state.author}`;
     return (
-      <div className="App container-fluid">
-          <div className="row align-items-center">
-            <div className="col align-self-center">
-              <blockquote className="blockquote">
-                <p>{this.state.quote}</p>
-                <footer className="blockquote-footer">
-                  <cite>{this.state.author}</cite>
-                </footer>
-              </blockquote>
-              <Button bsStyle="info" href={tweetUrl}  target="_blank">Tweet!</Button>
-              <Button bsStyle="dark" bsSize="large" onClick={this.getQuote}>New Quote!</Button>
+      <div className="container">
+        <div className="">
+          <div className="">
+            <blockquote className="">
+              <p>{this.state.quote}</p>
+              <footer className="">
+                <cite>{this.state.author}</cite>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+        <div className="">
+            <div className="">
+              <button href={tweetUrl} target="_blank">Tweet!</button>
+            </div>
+            <div className="">
+              <button onClick={this.getQuote}>New Quote!</button>
             </div>
         </div>
       </div>
