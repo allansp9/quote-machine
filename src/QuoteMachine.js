@@ -3,6 +3,7 @@ import Request from 'superagent';
 import Icon from 'react-component-bytesize-icons';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './QuoteMachine.css';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -43,25 +44,24 @@ export class QuoteMachine extends React.Component {
 
       <div className="container">
 
+        <header><h1 class="display-4">Random Quote Generator</h1></header>
+
         <div className="row">
-          <div className="col quote-wrapper">
-            <blockquote className="blockquote">
-              <p>"{this.state.quote}"</p>
-              <footer className="">
-                <cite>- {this.state.author}</cite>
-              </footer>
+          <div className="col quote-container">
+            <blockquote class="blockquote">
+              <p class="mb-0">{this.state.quote}.</p>
+              <footer class="blockquote-footer"><cite title="Source Title">{this.state.author}</cite></footer>
             </blockquote>
           </div>
 
           <div className="col-xs-2">
-            <div className="" onClick={this.getQuote}>
-              <Icon name="reload"/>
-            </div>
-            <div className="col">
-              <a href={tweetUrl} target="_blank" className="">
-                <Icon name="twitter"/>
-              </a>
-            </div>
+            <Button onClick={this.getQuote} className="btn-danger btn-block btn-reload" href="#">
+              <Icon name="reload" size="larger"/>
+            </Button>
+
+              <Button href={tweetUrl} target="_blank" className="btn-primary btn-tweet">
+                <Icon name="twitter" size="larger"/>
+              </Button>
           </div>
         </div>
 
