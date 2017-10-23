@@ -1,6 +1,10 @@
 import React from 'react';
-// import './QuoteMachine.css';
 import Request from 'superagent';
+import Icon from 'react-component-bytesize-icons';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './QuoteMachine.css';
+
+
 
 export class QuoteMachine extends React.Component {
 
@@ -32,28 +36,36 @@ export class QuoteMachine extends React.Component {
   }
 
   render () {
+
     const tweetUrl = `https://twitter.com/intent/tweet?text=${this.state.quote} - ${this.state.author}`;
+
     return (
+
       <div className="container">
-        <div className="">
-          <div className="">
-            <blockquote className="">
-              <p>{this.state.quote}</p>
+
+        <div className="row">
+          <div className="col quote-wrapper">
+            <blockquote className="blockquote">
+              <p>"{this.state.quote}"</p>
               <footer className="">
-                <cite>{this.state.author}</cite>
+                <cite>- {this.state.author}</cite>
               </footer>
             </blockquote>
           </div>
-        </div>
-        <div className="">
-            <div className="">
-              <a href={tweetUrl} target="_blank"><button>Tweet!</button></a>
+
+          <div className="col-xs-2">
+            <div className="" onClick={this.getQuote}>
+              <Icon name="reload"/>
             </div>
-            <div className="">
-              <button onClick={this.getQuote}>New Quote!</button>
+            <div className="col">
+              <a href={tweetUrl} target="_blank" className="">
+                <Icon name="twitter"/>
+              </a>
             </div>
+          </div>
         </div>
-      </div>
+
+    </div>
     );
   }
 }
