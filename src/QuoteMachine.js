@@ -49,7 +49,7 @@ export class QuoteMachine extends React.Component {
         <div className="row">
           <div className="col quote-container">
             <blockquote className="blockquote">
-              <p className="mb-0">{this.state.quote}.</p>
+              <p className="mb-0">{this.state.quote}</p>
               <footer className="blockquote-footer"><cite title="Source Title">{this.state.author}</cite></footer>
             </blockquote>
           </div>
