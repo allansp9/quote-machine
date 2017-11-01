@@ -44,13 +44,13 @@ export class QuoteMachine extends React.Component {
 
       <div className="container">
 
-        <header><h1 class="display-4">Random Quote Generator</h1></header>
+        <header><h1 className="display-4">Random Quote Generator</h1></header>
 
         <div className="row">
           <div className="col quote-container">
-            <blockquote class="blockquote">
-              <p class="mb-0">{this.state.quote}.</p>
-              <footer class="blockquote-footer"><cite title="Source Title">{this.state.author}</cite></footer>
+            <blockquote className="blockquote">
+              <p className="mb-0">{this.state.quote}.</p>
+              <footer className="blockquote-footer"><cite title="Source Title">{this.state.author}</cite></footer>
             </blockquote>
           </div>
 
@@ -63,6 +63,11 @@ export class QuoteMachine extends React.Component {
                 <Icon name="twitter" size="larger"/>
               </Button>
           </div>
+        </div>
+        <div className="row">
+            <div className="col contact">
+              <p className="text-right"><a href="https://github.com/allansp9/quote-machine" target="_blank" rel="noopener noreferrer">GitHub</a> / <a href="mailto:allansp9@gmail.com">allansp9@gmail.com</a></p>
+            </div>
         </div>
 
     </div>
