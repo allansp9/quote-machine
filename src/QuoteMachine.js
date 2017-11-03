@@ -43,8 +43,11 @@ export class QuoteMachine extends React.Component {
     return (
 
       <div className="container">
-
-        <header><h1 className="display-4">Random Quote Generator</h1></header>
+        <div className="row ">
+          <div className="col">
+            <h1 className="text-center">Random Quote Generator</h1>
+          </div>
+        </div>
 
         <div className="row">
           <div className="col quote-container">
@@ -54,22 +57,27 @@ export class QuoteMachine extends React.Component {
             </blockquote>
           </div>
 
-          <div className="col-xs-2">
-            <Button onClick={this.getQuote} className="btn-danger btn-block btn-reload" href="#">
+          <div className="col-xs-12 col-sm-auto btn-container">
+            <Button onClick={this.getQuote} className="btn-danger btn-reload" href="#">
               <Icon name="reload" size="larger"/>
             </Button>
-
-              <Button href={tweetUrl} target="_blank" className="btn-primary btn-tweet">
-                <Icon name="twitter" size="larger"/>
-              </Button>
+            <div className="w-100 d-none d-sm-block"></div>
+            <Button href={tweetUrl} target="_blank" className="btn-primary btn-tweet">
+              <Icon name="twitter" size="larger"/>
+            </Button>
           </div>
         </div>
-        <div className="row">
-            <div className="col contact">
-              <p className="text-right"><a href="https://github.com/allansp9/quote-machine" target="_blank" rel="noopener noreferrer">GitHub</a> / <a href="mailto:allansp9@gmail.com">allansp9@gmail.com</a></p>
-            </div>
-        </div>
 
+        <div className="row">
+          <div className="col contact">
+            <Button href="https://github.com/allansp9/quote-machine" target="_blank" className="btn-git">
+              <Icon name="github" size="regular"/>
+            </Button>
+            <Button href="mailto:allansp9@gmail.com" target="_blank" className="btn-git">
+              <Icon name="mail" size="regular"/>
+            </Button>
+          </div>
+        </div>
     </div>
     );
   }

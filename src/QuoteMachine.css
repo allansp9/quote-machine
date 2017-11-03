@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  height:200px;
+  /*height:200px;*/
 }
 
 .quote-container {
@@ -22,43 +22,70 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
   font-size: 2em;
+  /*margin-right: 10px;*/
+}
+
+.btn-container {
+  /*padding-right: 0;*/
 }
 
 .btn-tweet {
 background-color: #1da1f2;
+/*margin-right: 10px;*/
 }
 
 .btn {
-  border-radius: 0;
+  /*box-shadow: none!important;*/
 }
 
 .btn-reload {
   margin-bottom: 10px;
   background-color: #e84855;
+
 }
 
-.btn-reload svg {
-  margin-top: 4px;
+.btn-reload:active, .btn-reload:focus {
+  /*box-shadow: none!important;*/
+}
+
+.btn-git {
+  color: #403f4c;
+  border: none;
+  padding-top: 0;
+  height: 32px;
+  box-shadow: none!important;
+}
+.btn-git:hover {
+  color: #2c2b34;
+}
+.btn-git:active, .btn-git:focus {
+  box-shadow: 0;
 }
 
 .contact {
-  background-color: #403f4c;
   margin-top: 10px;
-  /*height: 50px;*/
+  background-color: #ffdfef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 }
 
-.contact p {
-    margin-bottom: 0;
-    padding: 5px;
-    color: white;
+@media (max-width: 576px) {
+  .quote-container {
+    margin-bottom: 10px;
+  }
+  
+  .btn-reload, .btn-tweet {
+    display: block;
+  }
+  .btn-container {
+    padding-right:
+  }
 }
-
-.contact p a {
-  color: white;
-}
-
-.contact p a:hover {
-  color: rgb(231, 231, 231);
+@media (min-width: 576px) {
+  .btn-container {
+    padding-right: 0;
+  }
 }
